@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export interface PlaylistRandomizerProps {
-    getRandomPlaylist: () => void;
+    getRandomPlaylist?: () => void;
 }
 
 export function RandomizerButton({
@@ -27,9 +27,12 @@ export function PlaylistRandomizerContainer() {
     const [results, setResults] = useState<ResultsDisplayProps['results']>();
 
     const getRandomPlaylist = () => {
-        const faction = 'USF';
-        const gamemode = '2v2';
-        setResults({ faction, gamemode });
+        const factions = ['USF', 'UKF', 'Wehrmacht', 'DAK'];
+        const gamemodes = ['1v1', '2v2', '3v3', '4v4'];
+        setResults({
+            faction: factions[Math.floor(Math.random() * factions.length)],
+            gamemode: gamemodes[Math.floor(Math.random() * gamemodes.length)],
+        });
     };
 
     return (

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "export": "next export"
   },
   "dependencies": {
     "@types/node": "18.14.6",
